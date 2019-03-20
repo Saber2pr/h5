@@ -1,10 +1,11 @@
+import { Build } from '../core/Build'
+import { Injectable, Bootstrap, Inject } from 'saber-ioc'
+import { Node, v2 } from 'saber-canvas'
 import { Component } from '../core/Component'
-import { Launch } from '../core/Launch'
-import { v2 } from 'saber-vector'
 
-class Comp1 extends Component {
-  constructor() {
-    super()
+@Injectable()
+class Comp1 {
+  constructor(@Inject('Node') public node: Node) {
     this.node
       .setSize(50, 50)
       .setColor('blue')
@@ -17,22 +18,23 @@ class Comp1 extends Component {
   }
 }
 
-class Comp2 extends Component {
-  constructor() {
-    super()
-    this.children.push(new Comp1())
+@Bootstrap
+@Injectable()
+class Comp2 {
+  constructor(public Comp1: Comp1, @Inject('Node') public node: Node) {
+    this.children.push(Comp1)
     this.node.setSize(50, 50).setColor('red')
   }
+  children: Component[] = []
 
   update(dt: number) {
     console.log('update2', dt)
   }
 }
 
-Launch({
-  root: new Comp2(),
+Build({
   MaxWidth: 500,
   MaxHeight: 500,
   elementId: 'root',
-  fps: 60
-})
+  fps: 1
+})(Comp1, Comp2)

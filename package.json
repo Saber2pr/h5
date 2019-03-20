@@ -14,7 +14,6 @@
   ],
   "main": "./lib/index.js",
   "scripts": {
-    "test": "node ./lib/test/test.js",
     "start": "tsc --watch",
     "dev": "rollup -c --watch"
   },
@@ -27,6 +26,7 @@
   "dependencies": {
     "saber-canvas": "^1.2.0",
     "saber-interval": "^1.1.4",
+    "saber-ioc": "^0.3.2",
     "saber-list": "0.0.1"
   }
 }

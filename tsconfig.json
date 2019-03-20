@@ -6,6 +6,8 @@
     "outDir": "./lib",
     "strict": true,
     "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "lib": [
       "dom",
       "es2015"

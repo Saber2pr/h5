@@ -1,17 +1,11 @@
-import { Node } from 'saber-canvas'
+import { Node, Config } from 'saber-canvas'
 
-export interface IComponent {
-  node: Node
-  children: Component[]
-  update(dt: number): void
+export interface AppConfig extends Config {
+  fps?: number
 }
 
-export abstract class Component implements IComponent {
-  constructor() {
-    this.node = new Node(0, 0)
-    this.children = []
-  }
+export interface Component {
   node: Node
-  children: Component[]
-  update(dt: number) {}
+  children?: Component[]
+  update(dt: number): void
 }
