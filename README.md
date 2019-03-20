@@ -31,7 +31,7 @@ class Comp2 {
     this.children = [Comp1]
     this.node.setSize(50, 50).setColor('red')
   }
-  children: Component[] = []
+  children: Component[]
 
   update(dt: number) {
     console.log('update2', dt)
