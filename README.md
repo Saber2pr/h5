@@ -10,7 +10,7 @@ git clone git remote add origin https://github.com/Saber2pr/saber-h5.git
 
 ```ts
 @Injectable()
-class Comp1 {
+class Comp1 implements Component {
   constructor(@Inject('Node') public node: Node) {
     this.node
       .setSize(50, 50)
@@ -26,7 +26,7 @@ class Comp1 {
 
 @Bootstrap
 @Injectable()
-class Comp2 {
+class Comp2 implements Component {
   constructor(public Comp1: Comp1, @Inject('Node') public node: Node) {
     this.children = [Comp1]
     this.node.setSize(50, 50).setColor('red')
@@ -42,7 +42,7 @@ Build({
   MaxWidth: 500,
   MaxHeight: 500,
   elementId: 'root',
-  fps: 1
+  fps: 2
 })(Comp1, Comp2)
 ```
 

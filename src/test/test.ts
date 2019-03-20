@@ -4,7 +4,7 @@ import { Node, v2 } from 'saber-canvas'
 import { Component } from '../core/Component'
 
 @Injectable()
-class Comp1 {
+class Comp1 implements Component {
   constructor(@Inject('Node') public node: Node) {
     this.node
       .setSize(50, 50)
@@ -20,12 +20,12 @@ class Comp1 {
 
 @Bootstrap
 @Injectable()
-class Comp2 {
+class Comp2 implements Component {
   constructor(public Comp1: Comp1, @Inject('Node') public node: Node) {
-    this.children.push(Comp1)
+    this.children = [Comp1]
     this.node.setSize(50, 50).setColor('red')
   }
-  children: Component[] = []
+  children: Component[]
 
   update(dt: number) {
     console.log('update2', dt)
@@ -36,5 +36,5 @@ Build({
   MaxWidth: 500,
   MaxHeight: 500,
   elementId: 'root',
-  fps: 1
+  fps: 2
 })(Comp1, Comp2)
