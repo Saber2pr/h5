@@ -1,6 +1,6 @@
 # saber-h5
 
-> saber-h5
+> a simple ioc framework for canvas-h5.
 
 ```bash
 npm install saber-h5
