@@ -28,7 +28,7 @@ class Comp1 {
 @Injectable()
 class Comp2 {
   constructor(public Comp1: Comp1, @Inject('Node') public node: Node) {
-    this.children.push(Comp1)
+    this.children = [Comp1]
     this.node.setSize(50, 50).setColor('red')
   }
   children: Component[] = []
