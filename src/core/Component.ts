@@ -5,7 +5,7 @@ export interface AppConfig extends Config {
 }
 
 export interface Component {
-  node: Node
+  node?: Node
   children?: Component[]
-  update(dt: number): void
+  update?(dt: number): void
 }
