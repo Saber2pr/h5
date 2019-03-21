@@ -24,7 +24,7 @@
     "rollup-plugin-node-resolve": "^4.0.0"
   },
   "dependencies": {
-    "saber-canvas": "^1.2.0",
+    "saber-canvas": "^1.2.1",
     "saber-interval": "^1.1.4",
     "saber-ioc": "^0.3.2",
     "saber-list": "0.0.1"

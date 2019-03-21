@@ -1,4 +1,4 @@
-export * from './core/Build'
+export * from './core/createCanvas'
 export * from './core/Component'
 export * from './core/Modules'
 export * from 'saber-canvas'

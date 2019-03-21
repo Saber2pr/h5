@@ -1,4 +1,4 @@
-import { createCanvas } from '../core/Build'
+import { createCanvas } from '../core/createCanvas'
 import { Injectable, Bootstrap, Inject } from 'saber-ioc'
 import { Node, v2 } from 'saber-canvas'
 import { Component } from '../core/Component'
