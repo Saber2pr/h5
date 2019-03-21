@@ -5,7 +5,7 @@
 ```bash
 npm install saber-h5
 
-git clone git remote add origin https://github.com/Saber2pr/saber-h5.git
+git clone https://github.com/Saber2pr/saber-h5.git
 ```
 
 ```ts
