@@ -15,7 +15,7 @@ const update = (Root: Component) => (dt: number) => {
   })
 }
 
-export const Build = (config: AppConfig) => (...Constructors: any[]) => {
+export const createCanvas = (config: AppConfig) => (...Constructors: any[]) => {
   Canvas = new sc.Canvas(config)
   Modules.forEach(mod => Injectable()(mod))
   const Root = new SaIOC.Container(...Constructors).pull<Component>()

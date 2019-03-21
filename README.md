@@ -38,7 +38,7 @@ class Comp2 implements Component {
   }
 }
 
-Build({
+createCanvas({
   MaxWidth: 500,
   MaxHeight: 500,
   elementId: 'root',

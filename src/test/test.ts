@@ -1,4 +1,4 @@
-import { Build } from '../core/Build'
+import { createCanvas } from '../core/Build'
 import { Injectable, Bootstrap, Inject } from 'saber-ioc'
 import { Node, v2 } from 'saber-canvas'
 import { Component } from '../core/Component'
@@ -32,7 +32,7 @@ class Comp2 implements Component {
   }
 }
 
-Build({
+createCanvas({
   MaxWidth: 500,
   MaxHeight: 500,
   elementId: 'root',
