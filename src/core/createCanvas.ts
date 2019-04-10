@@ -15,9 +15,9 @@ const update = (Root: Component) => (dt: number) => {
   })
 }
 
-export const createCanvas = (config: AppConfig) => (...Constructors: any[]) => {
+export const createCanvas = (config: AppConfig) => (...Components: any[]) => {
   Canvas = new sc.Canvas(config)
   Modules.forEach(mod => Injectable()(mod))
-  const Root = new SaIOC.Container(...Constructors).pull<Component>()
+  const Root = new SaIOC.Container(...Components).pull<Component>()
   schedule(update(Root), { delta: 1000 / (config.fps || 60) })
 }
